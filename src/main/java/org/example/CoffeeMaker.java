@@ -51,9 +51,9 @@ public class CoffeeMaker implements ISensorObservable{
         receptacle.setNextProcessor(pot);
         pot.setNextProcessor(boiler);
         boiler.setNextProcessor(boilerWarmer);
-        boilerWarmer.setNextProcessor(potWarmer);
-        potWarmer.setNextProcessor(reliefValve);
-        reliefValve.setNextProcessor(indicatorLight);
+        boilerWarmer.setNextProcessor(reliefValve);
+        reliefValve.setNextProcessor(potWarmer);                
+        potWarmer.setNextProcessor(indicatorLight);
 
         this.processor = coffee;
         this.processor.process();
