@@ -22,7 +22,6 @@ public class Coffee extends CoffeeMakerProcessor{
 
     @Override
     public void process() {
-        System.out.println("Cafeteando...");
         super.passProcess();
     }
 }
