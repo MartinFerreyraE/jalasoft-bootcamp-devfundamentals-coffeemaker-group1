@@ -2,7 +2,7 @@ package org.example.processes;
 
 import org.example.enums.OnOffSwitch;
 
-public class BoilerWarmer {
+public class BoilerWarmer extends CoffeeMakerProcessor{
 
     private OnOffSwitch onOffSwitch;
 
@@ -18,4 +18,8 @@ public class BoilerWarmer {
         this.onOffSwitch = onOffSwitch;
     }
 
+    @Override
+    public void process() {
+        super.passProcess();
+    }
 }

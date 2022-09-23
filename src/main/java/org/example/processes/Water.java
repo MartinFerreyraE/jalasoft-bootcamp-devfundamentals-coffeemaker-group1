@@ -1,6 +1,6 @@
 package org.example.processes;
 
-public class Water {
+public class Water extends CoffeeMakerProcessor{
 
     private int waterAmount;
 
@@ -16,4 +16,8 @@ public class Water {
         this.waterAmount = waterAmount;
     }
 
+    @Override
+    public void process() {
+        super.passProcess();
+    }
 }

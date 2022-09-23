@@ -1,9 +1,7 @@
 package org.example;
 
-import org.example.processes.Boiler;
-import org.example.processes.Coffee;
-import org.example.processes.CoffeeMakerProcessor;
-import org.example.processes.Filter;
+import org.example.enums.OnOffSwitch;
+import org.example.processes.*;
 import org.example.sensors.BoilerSensor;
 import org.example.sensors.Sensor;
 import org.example.sensors.WarmerPlateSensor;
@@ -38,14 +36,26 @@ public class CoffeeMaker implements ISensorObservable{
         this.addSensor(new BoilerSensor(this));
         this.addSensor(new WarmerPlateSensor(this));
 
-        CoffeeMakerProcessor filter = new Filter();
-        CoffeeMakerProcessor boiler = new Boiler();
         CoffeeMakerProcessor coffee = new Coffee(3);
+        CoffeeMakerProcessor filter = new Filter();
+        CoffeeMakerProcessor receptacle = new Receptacle();
+        CoffeeMakerProcessor pot = new Pot();
+        CoffeeMakerProcessor boiler = new Boiler();
+        CoffeeMakerProcessor boilerWarmer = new BoilerWarmer(OnOffSwitch.OFF);
+        CoffeeMakerProcessor potWarmer = new PotWarmer();
+        CoffeeMakerProcessor reliefValve = new ReliefValve();
+        CoffeeMakerProcessor indicatorLight = new IndicatorLight();
 
-        filter.setNextProcessor(boiler);
-        boiler.setNextProcessor(coffee);
+        coffee.setNextProcessor(filter);
+        filter.setNextProcessor(receptacle);
+        receptacle.setNextProcessor(pot);
+        pot.setNextProcessor(boiler);
+        boiler.setNextProcessor(boilerWarmer);
+        boilerWarmer.setNextProcessor(potWarmer);
+        potWarmer.setNextProcessor(reliefValve);
+        reliefValve.setNextProcessor(indicatorLight);
 
-        this.processor = filter;
+        this.processor = coffee;
         this.processor.process();
         this.notifySensors();
     }

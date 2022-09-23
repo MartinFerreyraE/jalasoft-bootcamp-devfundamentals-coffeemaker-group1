@@ -23,9 +23,6 @@ public class Coffee extends CoffeeMakerProcessor{
     @Override
     public void process() {
         System.out.println("Cafeteando...");
-
-        if( Sensor.getWarmerPlateSensorState() == WarmerPlateSensorState.WARMER_EMPTY){
-            System.out.println("Esta vacio");
-        }
+        super.passProcess();
     }
 }
