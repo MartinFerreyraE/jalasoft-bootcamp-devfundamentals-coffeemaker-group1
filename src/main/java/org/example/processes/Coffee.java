@@ -4,9 +4,12 @@ import org.example.enums.WarmerPlateSensorState;
 import org.example.sensors.Sensor;
 import org.example.sensors.WarmerPlateSensor;
 
+import java.util.Scanner;
+
 public class Coffee extends CoffeeMakerProcessor{
 
     private int coffeeGrounds;
+    private Scanner scanner = new Scanner(System.in);
 
     public Coffee(int coffeeGrounds) {
         this.coffeeGrounds = coffeeGrounds;
@@ -22,6 +25,8 @@ public class Coffee extends CoffeeMakerProcessor{
 
     @Override
     public void process() {
+        System.out.println("How many grams of coffee do you want to add: ");
+        Double coffeeGrams = Double.parseDouble(scanner.nextLine());
         super.passProcess();
     }
 }
