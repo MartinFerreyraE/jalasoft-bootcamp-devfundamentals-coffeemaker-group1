@@ -25,8 +25,8 @@ public class Boiler extends CoffeeMakerProcessor{
 
     @Override
     public void process() {
-        Sensor.getBoilerSensorState();
-        System.out.println("Calentando...");
+        System.out.println("Preparing boiler...");
+        super.notifySensors();
         super.passProcess();
     }
 }

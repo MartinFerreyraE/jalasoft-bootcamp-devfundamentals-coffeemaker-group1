@@ -26,7 +26,8 @@ public class Coffee extends CoffeeMakerProcessor{
     @Override
     public void process() {
         System.out.println("How many grams of coffee do you want to add: ");
-        Double coffeeGrams = Double.parseDouble(scanner.nextLine());
+        Double coffeeGrams = scanner.nextDouble();
+        super.notifySensors();
         super.passProcess();
     }
 }

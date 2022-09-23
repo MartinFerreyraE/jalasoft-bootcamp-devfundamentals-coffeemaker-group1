@@ -6,6 +6,8 @@ public class Pot extends CoffeeMakerProcessor{
 
     @Override
     public void process() {
+        System.out.println("Preparing pot...");
+        super.notifySensors();
         super.passProcess();
     }
 

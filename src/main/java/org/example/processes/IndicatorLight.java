@@ -12,6 +12,9 @@ public class IndicatorLight extends CoffeeMakerProcessor {
 
     @Override
     public void process() {
+        System.out.println("Process has finished correctly");
+        turnOn();
+        super.notifySensors();
         super.passProcess();
     }
 }

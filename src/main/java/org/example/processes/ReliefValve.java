@@ -10,10 +10,12 @@ public class ReliefValve extends CoffeeMakerProcessor{
     @Override
     public void process() {
     
-        if(Sensor.getWarmerPlateSensorState() == WarmerPlateSensorState.WARMER_EMPTY){
+        if(CoffeeMakerProcessor.getWarmerPlateSensorState() == WarmerPlateSensorState.WARMER_EMPTY){
             System.out.println("Pot not in place, Relief valve opened");
         }
         System.out.println("pot in place, Relief valve closed");
+
+        super.notifySensors();
         super.passProcess();
         
     }

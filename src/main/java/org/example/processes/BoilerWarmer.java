@@ -20,6 +20,8 @@ public class BoilerWarmer extends CoffeeMakerProcessor{
 
     @Override
     public void process() {
+        System.out.println("Heating boiler...");
+        super.notifySensors();
         super.passProcess();
     }
 }

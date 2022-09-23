@@ -1,14 +1,12 @@
 package org.example.sensors;
 
 import org.example.CoffeeMaker;
+import org.example.processes.CoffeeMakerProcessor;
 
-public class WarmerPlateSensor extends Sensor{
-    public WarmerPlateSensor(CoffeeMaker coffeeMaker) {
-        super(coffeeMaker);
-    }
+public class WarmerPlateSensor implements Sensor{
 
     @Override
     public void verify() {
-        System.out.println("Implementing WarmerPlate sensor logic");
+        System.out.println(" -> WarmerPlateSensor: verifying machine status");
     }
 }

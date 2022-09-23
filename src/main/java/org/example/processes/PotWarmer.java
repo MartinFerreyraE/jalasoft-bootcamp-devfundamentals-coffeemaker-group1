@@ -21,13 +21,14 @@ public class PotWarmer extends CoffeeMakerProcessor {
     @Override
     public void process() {
     
-        if(Sensor.getWarmerPlateSensorState() == WarmerPlateSensorState.POT_EMPTY){
+        if(CoffeeMakerProcessor.getWarmerPlateSensorState() == WarmerPlateSensorState.POT_EMPTY){
             System.out.println("Stoped heating, pot empty");
         }
         
         System.out.println("Started heating pot");
+
+        super.notifySensors();
         super.passProcess();
-        
         
     }
 }
