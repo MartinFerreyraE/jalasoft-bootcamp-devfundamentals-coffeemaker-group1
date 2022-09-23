@@ -1,6 +1,6 @@
 package org.example.processes;
 
-public class IndicatorLight {
+public class IndicatorLight extends CoffeeMakerProcessor {
 
     public void turnOn() {
         System.out.println("Indicator light is on");
@@ -10,4 +10,8 @@ public class IndicatorLight {
         System.out.println("Indicator light is off");
     }
 
+    @Override
+    public void process() {
+        super.passProcess();
+    }
 }
