@@ -9,6 +9,6 @@ public class WarmerPlateSensor extends Sensor{
 
     @Override
     public void verify() {
-        System.out.println("Received: " + this.getClass().getName());
+        System.out.println("Implementing WarmerPlate sensor logic");
     }
 }

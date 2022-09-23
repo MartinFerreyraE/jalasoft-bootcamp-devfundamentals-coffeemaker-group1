@@ -12,8 +12,9 @@ public class BoilerSensor extends Sensor{
 
     @Override
     public void verify() {
-        CoffeeMakerProcessor processor = super.coffeeMaker.getProcessor();
-        System.out.println("Received: " + this.getClass().getName());
+        System.out.println("Implementing Boiler sensor logic");
+
+//        CoffeeMakerProcessor processor = super.coffeeMaker.getProcessor();
 //        while(Objects.nonNull(processor)){
 //            System.out.println("hola");
 //        }
