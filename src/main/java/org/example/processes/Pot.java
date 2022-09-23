@@ -4,8 +4,8 @@ public class Pot {
 
     private int coffeeAmount;
 
-    public void addCoffee(Coffee coffee) {
-        coffeeAmount += coffee.getAmount();
-    }
+//    public void addCoffee(Coffee coffee) {
+//        coffeeAmount += coffee.getAmount();
+//    }
 
 }

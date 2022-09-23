@@ -6,8 +6,8 @@ import org.example.enums.WarmerPlateSensorState;
 
 public abstract class Sensor {
     protected CoffeeMaker coffeeMaker;
-    private static BoilerSensorState boilerSensorState;
-    private static WarmerPlateSensorState warmerPlateSensorState;
+    private static BoilerSensorState boilerSensorState = BoilerSensorState.boilerEmpty;
+    private static WarmerPlateSensorState warmerPlateSensorState = WarmerPlateSensorState.WARMER_EMPTY;
 
     public Sensor(CoffeeMaker coffeeMaker){
         this.coffeeMaker = coffeeMaker;
